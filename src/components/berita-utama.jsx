@@ -1,9 +1,6 @@
 import React from 'react';
 
-let judulBerita = "Nikahi Rakyat Jelata, Baifern dari Thailand Jadi Pengen Cerai Karena Nyusahin"
-let isiBerita = "Pernikahan Baifern Bah dan Dobleh bin Jamal Arifin dilangsungkan lewat upacara bendera 17 Agustus 1945"
-let lastUpdated = "3 mins"
-
+// bikin fungsi untuk dilakukan looping pada tiap variable
 function BeritaUtama1(foto, judulBerita, isiBerita, lastUpdated) {
     return (
         <div class="col-md-12">
@@ -69,13 +66,13 @@ const listBeritaFull = [
     },
     {
         Judul:"Iran Tawarkan Hadiah Rp 1,1 Triliun untuk Kepala Donald Trump, Sebut akan Serang Gedung Putih",
-        Isi:"Silahkan baca selengkapnya disini (males ngetik): https://www.tribunnews.com/internasional/2020/01/06/iran-tawarkan-hadiah-rp-11-triliun-untuk-kepala-donald-trump-sebut-akan-serang-gedung-putih",
+        Isi:"TRIBUNNEWS.COM - Pasca-tewasnya Komandan Pasukan Quds, Qasem Soleimani, pemerintah Iran menawarkan hadiah 80 juta dolar Amerika (Rp 1,1 triliun) untuk kepala Donald Trump. Diketahui, Qasem Soleimani tewas pada Jumat (3/1/2020) dini hari waktu setempat di Bandara Internasional Baghdad, Irak karena serangan Amerika Serikat.Terkait hal itu, siaran resmi pemerintah Iran mengatakan hadiah puluhan juta dolar akan diberikan kepada siapapun yang membunuh Presiden Amerika Serikat, Donald Trump.",
         Update:"3 mins",
         foto:require("../images/foto1.jpeg")
     },
     {
         Judul:"Donald Trump jabat tangan Kim Jong-un, melangkah masuk ke wilayah Korut",
-        Isi:"Presiden Amerika Serikat, Donald Trump, dan Pemimpin Korea Utara, Kim Jong-un, berjabat tangan di Zona Demiliterisasi (DMZ) yang memisahkan Korut dan Korea Selatan. Baca selengkapnya: https://www.bbc.com/indonesia/dunia-48815349",
+        Isi:"Presiden Amerika Serikat, Donald Trump, dan Pemimpin Korea Utara, Kim Jong-un, berjabat tangan di Zona Demiliterisasi (DMZ) yang memisahkan Korut dan Korea Selatan.",
         Update:"5 mins",
         foto:require("../images/foto2.jpg")
     }
