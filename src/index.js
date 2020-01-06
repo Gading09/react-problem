@@ -11,14 +11,14 @@ import ExperiencePage from './page/experience';
 // ReactDOM.render(<IndexPage />, document.getElementById('root'));
 // const element = document.getElementById("home");
 // RENDER EXPERIENCE
-ReactDOM.render(<ExperiencePage />, document.getElementById('root'));
-const element = document.getElementById("experience");
+// ReactDOM.render(<ExperiencePage />, document.getElementById('root'));
+// const element = document.getElementById("experience");
 // RENDER ABOUT
 // ReactDOM.render(<AboutPage />, document.getElementById('root'));
 // const element = document.getElementById("about");
 // // RENDER CONTACT
-// ReactDOM.render(<ContactPage />, document.getElementById('root'));
-element.classList.add("active-page")
+ReactDOM.render(<ContactPage />, document.getElementById('root'));
+// element.classList.add("active-page")
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
