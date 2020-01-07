@@ -10,21 +10,34 @@ const baseUrl = "https://newsapi.org/v2/";
 const category = "business";
 const urlHeadline = baseUrl + "top-headlines?country=id&apiKey=" + apiKey + "&category=" + category + "&pagesize=5";
 
-class BeritaEkonomi extends React.Component{
+class BeritaDinamis extends React.Component{
     state = {
         listNews : [],
-        isLoading : true
+        isLoading : true,
+        category : ""
     };
+    clickFunction = async param => {
+        await this.setState({category:param, isLoading: true})
+        console.log(this.state.category)
+        const self = this;
+        axios 
+            .get(`https://newsapi.org/v2/top-headlines?country=id&apiKey=6b694fdd4faa4fdc8499bb871d080fc1&category=${this.state.category}&pagesize=5`)
+            .then(function(response){
+                self.setState({ listNews: response.data.articles, isLoading: false})
+                // handle success
+                console.log(response.data)
+            })
+            .catch(function(error){
+                self.setState({isLoading: false})
+                // handle error
+                console.log(error)
+            })
+        return param = "active"
+    }
     componentDidMount = () => {
         const self = this;
         axios 
-            // .get(urlHeadline, {
-            //     proxy: {
-            //         host:'0.0.0.0', 
-            //         proxy: 3000
-            //     }
-            // })
-            .get(urlHeadline)
+            .get(`https://newsapi.org/v2/top-headlines?country=id&apiKey=6b694fdd4faa4fdc8499bb871d080fc1&category=${this.state.category}&pagesize=5`)
             .then(function(response){
                 self.setState({ listNews: response.data.articles, isLoading: false})
                 // handle success
@@ -48,7 +61,7 @@ class BeritaEkonomi extends React.Component{
         ))
         return (
         <body>
-        <Header ekonomi="active" />
+        <Header param="active" clickFunction={this.clickFunction}/>
             <div class="container pt-xl-3">
                 <div class="row">
                     <BeritaTerkini />
@@ -63,4 +76,4 @@ class BeritaEkonomi extends React.Component{
 
     }
 }
-export default BeritaEkonomi;
+export default BeritaDinamis;

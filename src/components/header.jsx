@@ -12,16 +12,16 @@ class Header extends React.Component{
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item" class={this.props.sports}>
+      <li class="nav-item" class={this.props.sports} onClick={() => this.props.clickFunction("sports")}>
         <a class="nav-link" href="#">Olahraga <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item" class={this.props.business}>
+      <li class="nav-item" class={this.props.business} onClick={() => this.props.clickFunction("business")}>
         <a class="nav-link" href="#">Ekonomi</a>
       </li>
-      <li class="nav-item" class={this.props.technology}>
+      <li class="nav-item" class={this.props.technology} onClick={() => this.props.clickFunction("technology")}>
         <a class="nav-link" href="#">Teknologi</a>
       </li>
-      <li class="nav-item" class={this.props.entertainment}>
+      <li class="nav-item" class={this.props.entertainment} onClick={() => this.props.clickFunction("entertainment")}>
         <a class="nav-link" href="#">Hiburan</a>
       </li>
       <li class="nav-item dropdown">
@@ -29,10 +29,9 @@ class Header extends React.Component{
           Lainnya
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Luar Negeri</a>
-          <a class="dropdown-item" href="#">Lainnya lagi</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Lainnya terus</a>
+          <a class="dropdown-item" href="#" onClick={() => this.props.clickFunction("health")}>Kesehatan</a>
+          <a class="dropdown-item" href="#" onClick={() => this.props.clickFunction("science")}>Sains</a>
+          <a class="dropdown-item" href="#" onClick={() => this.props.clickFunction("general")}>General</a>
         </div>
       </li>
     </ul>
