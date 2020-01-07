@@ -4,9 +4,12 @@ import './styles/index.css';
 import './styles/bootstrap.min.css'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import PageBerita from "../src/pages/berita-1"
+import BeritaSports from "../src/pages/berita-sports";
+import BeritaEkonomi from "../src/pages/berita-ekonomi";
+import BeritaTeknologi from "../src/pages/berita-teknologi";
+import BeritaHiburan from "../src/pages/berita-hiburan";
 
-ReactDOM.render(<PageBerita />, document.getElementById('root'));
+ReactDOM.render(<BeritaSports />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -1,7 +1,7 @@
 import React from 'react';
 
 // bikin fungsi untuk dilakukan looping pada tiap variable
-function BeritaUtama1(foto, judulBerita, isiBerita, lastUpdated) {
+function BeritaUtama(foto, urlBerita, judulBerita, isiBerita, publishedAt) {
     return (
         <div class="col-md-12">
             <table class="table table-borderless" style={{border:"solid", borderWidth:"0.1px", borderColor:"silver"}}>
@@ -17,7 +17,9 @@ function BeritaUtama1(foto, judulBerita, isiBerita, lastUpdated) {
 <tbody>
     <tr>
         <td>
+            <a href={urlBerita}>
             <span class="text-center" style={{fontWeight:"bold", fontSize:"22px"}}>{judulBerita}</span>
+            </a>
         </td>
     </tr>
     <tr>
@@ -27,7 +29,7 @@ function BeritaUtama1(foto, judulBerita, isiBerita, lastUpdated) {
     </tr>
     <tr>
         <td class="py-0">
-            <p class="text-left" style={{color:"silver"}}>Last updated {lastUpdated} ago</p>
+            <p class="text-left" style={{color:"silver"}}>Published at: {publishedAt}</p>
         </td>
     </tr>
     <tr class="border" style={{backgroundColor:"#F7F7F7"}}>
@@ -57,34 +59,34 @@ function BeritaUtama1(foto, judulBerita, isiBerita, lastUpdated) {
     )
 }
 
-const listBeritaFull = [
-    {
-        Judul:"Nikahi Rakyat Jelata, Baifern dari Thailand Jadi Pengen Cerai Karena Nyusahin",
-        Isi:"Pernikahan Baifern Bah dan Dobleh bin Jamal Arifin dilangsungkan lewat upacara bendera 17 Agustus 1945",
-        Update:"3 mins",
-        foto:require("../images/foto.jpg")
-    },
-    {
-        Judul:"Iran Tawarkan Hadiah Rp 1,1 Triliun untuk Kepala Donald Trump, Sebut akan Serang Gedung Putih",
-        Isi:"TRIBUNNEWS.COM - Pasca-tewasnya Komandan Pasukan Quds, Qasem Soleimani, pemerintah Iran menawarkan hadiah 80 juta dolar Amerika (Rp 1,1 triliun) untuk kepala Donald Trump. Diketahui, Qasem Soleimani tewas pada Jumat (3/1/2020) dini hari waktu setempat di Bandara Internasional Baghdad, Irak karena serangan Amerika Serikat.Terkait hal itu, siaran resmi pemerintah Iran mengatakan hadiah puluhan juta dolar akan diberikan kepada siapapun yang membunuh Presiden Amerika Serikat, Donald Trump.",
-        Update:"3 mins",
-        foto:require("../images/foto1.jpeg")
-    },
-    {
-        Judul:"Donald Trump jabat tangan Kim Jong-un, melangkah masuk ke wilayah Korut",
-        Isi:"Presiden Amerika Serikat, Donald Trump, dan Pemimpin Korea Utara, Kim Jong-un, berjabat tangan di Zona Demiliterisasi (DMZ) yang memisahkan Korut dan Korea Selatan.",
-        Update:"5 mins",
-        foto:require("../images/foto2.jpg")
-    }
-]
-const loopBerita = listBeritaFull.map((value, index)=>(
-    BeritaUtama1(value.foto, value.Judul, value.Isi, value.Update)
-))
+// const listBeritaFull = [
+//     {
+//         Judul:"Nikahi Rakyat Jelata, Baifern dari Thailand Jadi Pengen Cerai Karena Nyusahin",
+//         Isi:"Pernikahan Baifern Bah dan Dobleh bin Jamal Arifin dilangsungkan lewat upacara bendera 17 Agustus 1945",
+//         Update:"3 mins",
+//         foto:require("../images/foto.jpg")
+//     },
+//     {
+//         Judul:"Iran Tawarkan Hadiah Rp 1,1 Triliun untuk Kepala Donald Trump, Sebut akan Serang Gedung Putih",
+//         Isi:"TRIBUNNEWS.COM - Pasca-tewasnya Komandan Pasukan Quds, Qasem Soleimani, pemerintah Iran menawarkan hadiah 80 juta dolar Amerika (Rp 1,1 triliun) untuk kepala Donald Trump. Diketahui, Qasem Soleimani tewas pada Jumat (3/1/2020) dini hari waktu setempat di Bandara Internasional Baghdad, Irak karena serangan Amerika Serikat.Terkait hal itu, siaran resmi pemerintah Iran mengatakan hadiah puluhan juta dolar akan diberikan kepada siapapun yang membunuh Presiden Amerika Serikat, Donald Trump.",
+//         Update:"3 mins",
+//         foto:require("../images/foto1.jpeg")
+//     },
+//     {
+//         Judul:"Donald Trump jabat tangan Kim Jong-un, melangkah masuk ke wilayah Korut",
+//         Isi:"Presiden Amerika Serikat, Donald Trump, dan Pemimpin Korea Utara, Kim Jong-un, berjabat tangan di Zona Demiliterisasi (DMZ) yang memisahkan Korut dan Korea Selatan.",
+//         Update:"5 mins",
+//         foto:require("../images/foto2.jpg")
+//     }
+// ]
+// const loopBerita = listBeritaFull.map((value, index)=>(
+//     BeritaUtama1(value.foto, value.Judul, value.Isi, value.Update)
+// ))
 
-class BeritaUtama extends React.Component{
-    render (){
-        return (<div class="col-md-7">{loopBerita}</div>)
-    }
-}
+// class BeritaUtama extends React.Component{
+//     render (){
+//         return (<div class="col-md-7">{loopBerita}</div>)
+//     }
+// }
 
 export default BeritaUtama;

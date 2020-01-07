@@ -12,16 +12,16 @@ class Header extends React.Component{
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Sepakbola <span class="sr-only">(current)</span></a>
+      <li class="nav-item" class={this.props.sports}>
+        <a class="nav-link" href="#">Olahraga <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" class={this.props.business}>
         <a class="nav-link" href="#">Ekonomi</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Politik</a>
+      <li class="nav-item" class={this.props.technology}>
+        <a class="nav-link" href="#">Teknologi</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" class={this.props.entertainment}>
         <a class="nav-link" href="#">Hiburan</a>
       </li>
       <li class="nav-item dropdown">
