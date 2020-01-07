@@ -21,7 +21,7 @@ class BeritaDinamis extends React.Component{
         console.log(this.state.category)
         const self = this;
         axios 
-            .get(`https://newsapi.org/v2/top-headlines?country=id&apiKey=6b694fdd4faa4fdc8499bb871d080fc1&category=${this.state.category}&pagesize=5`)
+            .get(`https://newsapi.org/v2/top-headlines?country=id&apiKey=ae6f72820b164aa2a1eebdb59fa72487&category=${this.state.category}&pagesize=5`)
             .then(function(response){
                 self.setState({ listNews: response.data.articles, isLoading: false})
                 // handle success
@@ -32,12 +32,30 @@ class BeritaDinamis extends React.Component{
                 // handle error
                 console.log(error)
             })
-        return param = "active"
+        return param
+    };
+    onChangeFunction = async e => {
+        let keyword = e.target.value
+        console.log(keyword)
+        await this.setState({ listNews: [], isLoading: true })
+        const self = this;
+        await axios 
+            .get(`https://newsapi.org/v2/everything?q=${keyword}&apiKey=ae6f72820b164aa2a1eebdb59fa72487`)
+            .then(function(response){
+                self.setState({ listNews: response.data.articles, isLoading: false})
+                // handle success
+                console.log(response.data)
+            })
+            .catch(function(error){
+                self.setState({isLoading: false})
+                // handle error
+                console.log(error)
+            })
     }
     componentDidMount = () => {
         const self = this;
         axios 
-            .get(`https://newsapi.org/v2/top-headlines?country=id&apiKey=6b694fdd4faa4fdc8499bb871d080fc1&category=${this.state.category}&pagesize=5`)
+            .get(`https://newsapi.org/v2/top-headlines?country=id&apiKey=ae6f72820b164aa2a1eebdb59fa72487&category=${this.state.category}&pagesize=5`)
             .then(function(response){
                 self.setState({ listNews: response.data.articles, isLoading: false})
                 // handle success
@@ -61,7 +79,13 @@ class BeritaDinamis extends React.Component{
         ))
         return (
         <body>
-        <Header param="active" clickFunction={this.clickFunction}/>
+        <Header 
+            param="active" 
+            clickFunction={this.clickFunction}
+            isi={this.keyword}
+            placeholder="cari di sini"
+            onChangeFunction={e => this.onChangeFunction(e)}
+            />
             <div class="container pt-xl-3">
                 <div class="row">
                     <BeritaTerkini />

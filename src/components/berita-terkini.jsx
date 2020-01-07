@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 // News API
-const apiKey = "6b694fdd4faa4fdc8499bb871d080fc1";
+const apiKey = "ae6f72820b164aa2a1eebdb59fa72487";
 const baseUrl = "https://newsapi.org/v2/";
 const urlHeadline = baseUrl + "top-headlines?country=id&apiKey=" + apiKey + "&pagesize=10";
 
