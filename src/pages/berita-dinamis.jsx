@@ -8,7 +8,7 @@ import { actions, store } from "../store";
 
 class BeritaDinamis extends React.Component{
     componentDidMount = () => {
-        const urlNewsApi = `https://newsapi.org/v2/top-headlines?country=id&apiKey=ae6f72820b164aa2a1eebdb59fa72487&category=${this.props.category}&pagesize=5`
+        const urlNewsApi = `https://newsapi.org/v2/top-headlines?country=id&apiKey=05b5a2e626d442e483663e8b5fe89048&category=${this.props.category}&pagesize=5`
         // dari store.js
         this.props.runAxios(urlNewsApi)
     };

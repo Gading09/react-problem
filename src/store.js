@@ -47,14 +47,14 @@ export const actions = store => ({
     onChangeFunctionSearch: (state, event) => {
         let keyword = event.target.value
         store.setState({ listNews: [], isLoading: true })
-        const urlNewsApi = `https://newsapi.org/v2/everything?q=${keyword}&apiKey=ae6f72820b164aa2a1eebdb59fa72487`
+        const urlNewsApi = `https://newsapi.org/v2/everything?q=${keyword}&apiKey=05b5a2e626d442e483663e8b5fe89048`
         runAxios(state, urlNewsApi)
         console.log(initialState.isLoading)
     },
     onClickFunctionCategory: (state, param) => {
         store.setState({ category:param, isLoading: true })
         console.log(param)
-        const urlNewsApi = `https://newsapi.org/v2/top-headlines?country=id&apiKey=ae6f72820b164aa2a1eebdb59fa72487&category=${param}&pagesize=5`
+        const urlNewsApi = `https://newsapi.org/v2/top-headlines?country=id&apiKey=05b5a2e626d442e483663e8b5fe89048&category=${param}&pagesize=5`
         runAxios(state, urlNewsApi)
         console.log(initialState.isLoading)
     }

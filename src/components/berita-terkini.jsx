@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 // News API
-const apiKey = "ae6f72820b164aa2a1eebdb59fa72487";
+const apiKey = "05b5a2e626d442e483663e8b5fe89048";
 const baseUrl = "https://newsapi.org/v2/";
 const urlHeadline = baseUrl + "top-headlines?country=id&apiKey=" + apiKey + "&pagesize=10";
 
