@@ -34,12 +34,12 @@ class SignIn extends React.Component{
                     localStorage.setItem("full_name", response.data.full_name);
                     localStorage.setItem("email", response.data.email);
                     self.setState({ is_login: true })
+                    (self.props.history.push("/profile"));
                 }
             })
             .catch(function(error){
                 console.log(error)
             })
-                self.props.history.push("/profile");
     }
     }
     clickFunction = async param => {
