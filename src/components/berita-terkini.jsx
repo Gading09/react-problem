@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 // News API
 const apiKey = "ae6f72820b164aa2a1eebdb59fa72487";
@@ -13,13 +14,7 @@ class BeritaTerkini extends React.Component{
     };
     componentDidMount = () => {
         const self = this;
-        axios 
-            // .get(urlHeadline, {
-            //     proxy: {
-            //         host:'0.0.0.0', 
-            //         proxy: 3000
-            //     }
-            // })
+        axios
             .get(urlHeadline)
             .then(function(response){
                 self.setState({ listNews: response.data.articles, isLoading: false})
@@ -49,7 +44,7 @@ class BeritaTerkini extends React.Component{
                         <span style={{fontWeight:"bold", fontSize:"16px", color:"#008A89"}}>BERITA TERKINI</span>
                     </div>
                     <div class="col-md-6 text-right">
-                        <a href="" style={{fontSize:"12px"}}>lihat semua</a>
+                        <Link to="/semua" style={{fontSize:"12px"}}>lihat semua</Link>
                     </div>
                 </div>
             </th>

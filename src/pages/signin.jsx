@@ -1,27 +1,25 @@
 import React from 'react';
 import Header from '../components/header';
-import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import BodySignIn from '../components/body-signin';
+import { withRouter } from "react-router-dom";
+import { connect } from "unistore/react";
+import { actions, store } from "../store";
 
 class SignIn extends React.Component{
-    state = {
-        email:"",
-        password:"",
-        is_login:false
-    }
-    is_login = JSON.parse(localStorage.getItem("is_login"));
+    // semua state dan data pada sign-in ada di store js
+    is_login = this.props.is_login;
     
     changeInput = e => {
-        this.setState({[e.target.name] : e.target.value})
+        store.setState({[e.target.name] : e.target.value})
     }
     postLogin = () => {
         const data = {
-            email: this.state.email,
-            password: this.state.password
+            email: this.props.email,
+            password: this.props.password
         };
         const self = this;
-        if (this.state.email == "" || this.state.password == ""){
+        if (this.props.email === "" || this.props.password === ""){
             alert("isi dulu gan")
         } else {
         axios 
@@ -29,28 +27,29 @@ class SignIn extends React.Component{
             .then(function(response) {
                 console.log(response.data);
                 if (response.data.hasOwnProperty("api_key")){
-                    localStorage.setItem("api_key", response.data.api_key);
-                    localStorage.setItem("is_login", true);
-                    localStorage.setItem("full_name", response.data.full_name);
-                    localStorage.setItem("email", response.data.email);
-                    self.setState({ is_login: true })
+                    store.setState({"api_key": response.data.api_key});
+                    store.setState({"is_login": true});
+                    store.setState({"full_name": response.data.full_name});
+                    store.setState({"email_profil": response.data.email});
                     (self.props.history.push("/profile"));
                 }
             })
             .catch(function(error){
                 console.log(error)
             })
+            console.log(this.props.is_login)
     }
     }
-    clickFunction = async param => {
-        return (<Redirect to={{pathname: "/"}} />)
-}
 
     render(){
         return (
             <body>
-                {this.is_login ? (<div class="row"><h1 class="text-left">KAMU SUDAH LOGIN!</h1> 
-                <Link to="/"><button type="button" class="btn btn-secondary text-center">Back to Home</button></Link></div>) : <BodySignIn 
+            <Header 
+                clickFunction={this.props.onClickFunctionCategory} //Dari store.js
+                onChangeFunction={e => this.props.onChangeFunctionSearch(e)} //Dari store.js
+            />
+                {this.is_login ? (<div class="text-center"><h1>KAMU SUDAH LOGIN!</h1> 
+                </div>) : <BodySignIn 
                 changeInput={e => this.changeInput(e)} 
                 postLogin={this.postLogin}
                 preventDefault={e => e.preventDefault()}/>}
@@ -58,4 +57,4 @@ class SignIn extends React.Component{
         )
     }
 }
-export default SignIn;
+export default connect("listNews, isLoading, category, api_key, is_login, full_name, email, email_profil", actions)(withRouter(SignIn));

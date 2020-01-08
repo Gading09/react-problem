@@ -17,7 +17,6 @@ class BodySignIn extends React.Component{
             </div>
             <button type="submit" class="btn btn-primary" onClick={() => this.props.postLogin()}>Sign In</button>
             </form>
-            <Link to="/"><button type="button" class="btn btn-secondary text-center">Back to Home</button></Link>
 
         </div>
         )

@@ -5,6 +5,8 @@ import SignIn from "../pages/signin";
 import BeritaDinamis from "../pages/berita-dinamis";
 import Profile from "../pages/profile";
 import Logout from "../pages/logout";
+import LihatSemua from "../pages/prank-semua";
+import NotFound from "../pages/not-found";
 
 const MainRoute = () => {
     return (
@@ -14,8 +16,9 @@ const MainRoute = () => {
                 <Route exact path="/signin" component={SignIn} />
                 <Route exact path="/profile" component={Profile} />
                 <Route exact path="/logout" component={Logout} />
+                <Route exact path="/semua" component={LihatSemua} />
                 <Route path="/news-category/" component={BeritaDinamis} />
-                {/* <Route component={NotMatch} /> */}
+                <Route component={NotFound} />
             </Switch>
         </BrowserRouter>
     )
