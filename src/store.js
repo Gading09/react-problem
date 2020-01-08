@@ -31,18 +31,7 @@ const runAxios = (state, urlAxios) =>{
     }
 export const actions = store => ({
     runAxios: (state, urlAxios) =>{
-        axios 
-            .get(urlAxios)
-            .then(function(response){
-                store.setState({ listNews: response.data.articles, isLoading: false})
-                // handle success
-                console.log(response.data)
-            })
-            .catch(function(error){
-                store.setState({isLoading: false})
-                // handle error
-                console.log(error)
-            })
+        runAxios(state, urlAxios)
     },
     onChangeFunctionSearch: (state, event) => {
         let keyword = event.target.value
