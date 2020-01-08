@@ -10,9 +10,7 @@ function Search (props) {
         placeholder={props.placeholder}
         onChange={e => props.onChangeFunction(e)}
       />
-      <button class="btn btn-outline-dark my-2 my-sm-0 mr-lg-5" type="submit" aria-label="Search">
         <i class="fa fa-fw fa-search"></i>
-      </button>
     </form>
   )
 }
