@@ -12,7 +12,7 @@ class Header extends React.Component{
     render() {
       const headerKategori = listKategori.map((kategori)=>
     <li class="nav-item" namaKategori={kategori.inggris} onClick={() => this.props.clickFunction(kategori.inggris)}>
-      <Link to={`/news-category/${kategori.indonesia}`}><a class="nav-link" href="">{kategori.indonesia} <span class="sr-only">(current)</span></a></Link>
+      <Link to={`/news-category/${kategori.indonesia}`} class="nav-link">{kategori.indonesia} <span class="sr-only">(current)</span></Link>
     </li>
     )
         return (
@@ -39,13 +39,13 @@ class Header extends React.Component{
     <Search {...this.props}/>
     <ul class="navbar-nav ml-lg-5">
     <li class="nav-item">
-        <Link to="/signin"><a class="nav-link" href="#">Masuk</a></Link>
+        <Link to="/signin" class="nav-link">Masuk</Link>
       </li>
       <li class="nav-item">
-        <Link to="/profile"> <a class="nav-link" href="#">Profile</a></Link>
+        <Link to="/profile" class="nav-link"> Profile</Link>
       </li>
       <li class="nav-item">
-        <Link to="/logout"> <a class="nav-link" href="#">Logout</a></Link>
+        <Link to="/logout" class="nav-link"> Logout</Link>
       </li>
     </ul>
   </div>
