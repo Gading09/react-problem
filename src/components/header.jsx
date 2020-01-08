@@ -30,9 +30,9 @@ class Header extends React.Component{
           Lainnya
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="" onClick={() => this.props.clickFunction("health")}>Kesehatan</a>
-          <a class="dropdown-item" href="" onClick={() => this.props.clickFunction("science")}>Sains</a>
-          <a class="dropdown-item" href="" onClick={() => this.props.clickFunction("general")}>General</a>
+        <Link to={`/news-category/kesehatan`}><a class="dropdown-item" href="" onClick={() => this.props.clickFunction("health")}>Kesehatan</a></Link>
+        <Link to={`/news-category/sains`}><a class="dropdown-item" href="" onClick={() => this.props.clickFunction("science")}>Sains</a></Link>
+        <Link to={`/news-category/general`}><a class="dropdown-item" href="" onClick={() => this.props.clickFunction("general")}>General</a></Link>
         </div>
       </li>
     </ul>

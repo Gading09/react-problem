@@ -21,6 +21,9 @@ class SignIn extends React.Component{
             password: this.state.password
         };
         const self = this;
+        if (this.state.email == "" || this.state.password == ""){
+            alert("isi dulu gan")
+        } else {
         axios 
             .post("https://alta13.free.beeceptor.com/login", data)
             .then(function(response) {
@@ -36,9 +39,6 @@ class SignIn extends React.Component{
             .catch(function(error){
                 console.log(error)
             })
-            if (this.state.email == "" || this.state.password == ""){
-                alert("isi dulu gan")
-            } else {
                 self.props.history.push("/profile");
     }
     }

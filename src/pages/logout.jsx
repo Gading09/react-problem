@@ -17,7 +17,11 @@ const Logout = () => {
         )
     }else{
     localStorage.setItem("is_login", false);
-        return (<Redirect to={{pathname: "/"}} />
+        return (
+            <body>
+            {alert("successfully logged out!")}
+            <Redirect to={{pathname:"/"}} />
+            </body>
         )
     }
 }
